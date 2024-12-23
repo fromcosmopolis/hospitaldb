@@ -1,0 +1,117 @@
+1. Veritabanı Tablo Yapıları
+Tablolar:
+Registration (Kayıt) Tablosu: Hasta kayıt bilgilerini tutar.
+
+Patient_ID: Yabancı anahtar (Foreign Key), Patient tablosuna referans verir.
+Full_Name: Tam adı
+Assurance: Güvence
+Policlinic: Poliklinik
+Age: Yaş
+R_Date: Kayıt tarihi
+Patient (Hasta) Tablosu: Hasta bilgilerini tutar.
+
+Patient_ID: Birincil anahtar (Primary Key)
+Phone: Telefon numarası
+Full_Name: Tam adı
+Gender: Cinsiyet
+Blood_Type: Kan grubu
+Address: Adres
+Emergency_Person: Acil durumda aranacak kişi
+Age: Yaş
+Doctor (Doktor) Tablosu: Doktor bilgilerini tutar.
+
+Doctor_ID: Birincil anahtar (Primary Key)
+Patient_ID: Yabancı anahtar (Foreign Key), Patient tablosuna referans verir.
+Department_ID: Yabancı anahtar (Foreign Key), Department tablosuna referans verir.
+Age: Yaş
+Full_Name: Tam adı
+Salary: Maaş
+Phone: Telefon numarası
+Email: E-posta
+Specialization: Uzmanlık alanı
+Diagnosis (Teşhis) Tablosu: Teşhis bilgilerini tutar.
+
+Patient_ID: Yabancı anahtar (Foreign Key)
+Medicine_ID: Yabancı anahtar (Foreign Key), Medicine tablosuna referans verir.
+Complaints: Şikayetler
+Diagnosis_Date: Teşhis tarihi
+Age: Yaş
+Results: Sonuçlar
+Appoints hereket tablosu: Doctor ,Patient ve Diagnosis varlık tablolarını birbirine bağlar. bu tabloda patient ID ve doctor ID foreign keydir. ayrıca bu tabloda Appointment Date ve Appointment Time diğer öznitelikler olarak tasarlanmıştır.
+Medicine (İlaç) Tablosu: İlaç bilgilerini tutar.
+
+Medicine_ID: Birincil anahtar (Primary Key)
+Producer: Üretici
+Medicine_Type: İlaç türü
+Warehouse_Quantity: Depo miktarı
+Medicine_Name: İlaç adı
+Product_Date: Üretim tarihi
+Laboratory (Laboratuvar) Tablosu: Laboratuvar test bilgilerini tutar.
+
+Lab_ID: Birincil anahtar (Primary Key)
+Patient_ID: Yabancı anahtar (Foreign Key), Doctor tablosuna referans verir.
+Test_Date: Test tarihi
+Reference_Range: Referans aralığı
+Lab_Stuff_Name: Laboratuvar personeli adı
+Results: Sonuçlar
+Test_Name: Test adı
+Surgery (Ameliyat) Tablosu: Ameliyat bilgilerini tutar.
+
+Surgery_ID: Birincil anahtar (Primary Key)
+Patient_ID: Yabancı anahtar (Foreign Key), Doctor tablosuna referans verir.
+Surgery_Date: Ameliyat tarihi
+Room (Oda) Tablosu: Oda bilgilerini tutar.
+
+Room_ID: Birincil anahtar (Primary Key)
+Surgery_ID: Yabancı anahtar (Foreign Key), Surgery tablosuna referans verir.
+Status: Durum
+Department_Name: Departman adı
+Room_Type: Oda türü
+Nurse (Hemşire) Tablosu: Hemşire bilgilerini tutar.
+
+Nurse_ID: Birincil anahtar (Primary Key)
+Nurse_Name: Hemşire adı
+Work hareket tablosu: Nurse ile Department arasında ilişki kurar. bu tabloda Nurse ID ve Department ID Foreign key olarak tutulmuştur.
+Governs hareket tablosu : Nurse ile Room arasında ilişki kurar. bu tabloda Nurse ID ve Room ID Foreign Key olarak tutulmaktadır.
+Department (Departman) Tablosu: Departman bilgilerini tutar.
+
+Hospital (Hastane) Tablosu: Hastane bilgilerini tutar.
+
+Hospital_ID: Birincil anahtar (Primary Key)
+Hospital_Name: Hastane adı
+Capacity: Kapasite
+Phone: Telefon numarası
+Total_Employee: Toplam çalışan sayısı
+Address: Adres
+Founded_Date: Kuruluş tarihi
+Email: E-posta
+Departent_ID: Department tablosuna referans verir(Foreign Key)
+Administration (Yönetim) Tablosu: Yönetim bilgilerini tutar.
+
+Hospital_ID: Yabancı anahtar (Foreign Key), Hospital tablosuna referans verir.
+Phone: Telefon numarası
+Head_Manager: Baş yönetici
+Email: E-posta
+
+
+
+Department_ID: Birincil anahtar (Primary Key)
+Department_Name: Departman adı
+Stuff: Malzemeler
+Department_Description: Departman açıklaması
+Employee (Çalışan) Tablosu: Çalışan bilgilerini tutar.
+
+Employee_ID: Birincil anahtar (Primary Key)
+Department_ID: Yabancı anahtar (Foreign Key), Department tablosuna referans verir.
+Phone: Telefon numarası
+Start_Date: Başlangıç tarihi
+Email: E-posta
+Address: Adres
+Full_Name: Tam adı
+Equipment (Ekipman) Tablosu: Ekipman bilgilerini tutar.
+
+Equipment_ID: Birincil anahtar (Primary Key)
+Department_ID: Yabancı anahtar (Foreign Key), Department tablosuna referans verir.
+Equipment_Name: Ekipman adı
+Equipment_Quantity: Ekipman miktarı
+Requested_Date: Talep tarihi
